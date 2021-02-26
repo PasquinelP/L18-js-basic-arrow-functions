@@ -139,8 +139,41 @@ console.log(heavyHeroesNames);
 
 // Make above chained:
 
+const heavyHeroesNamesChaining = superheroes.filter((superhero) => {
+   return superhero.weight == 200}).map((superhero) => {
+  return superhero.name;
+});
 
+console.log(heavyHeroesNamesChaining);
 
 
 // 4. Maak een array met alle comics waar de superhelden hun "first appearances" hebben gehad
 
+const firstAppearance = superheroes.map((superhero) => {
+  return superhero.first_appearance;
+});
+
+console.log(firstAppearance);
+
+// 5. Maak een array met alle superhelden van DC Comics. Is dat gelukt? Herhaal de bovenstaande functie dan en maak ook een array met alle superhelden van Marvel Comics.
+
+const dcComics = superheroes.filter((superhero) => {
+  return superhero.publisher === "DC Comics"
+}).map((superhero) => {
+  return superhero.name;
+})
+
+console.log(dcComics);
+
+const marvelComics = superheroes
+  .filter((superhero) => {
+    return superhero.publisher === "Marvel Comics";
+  })
+  .map((superhero) => {
+    return superhero.name;
+  });
+
+  console.log(marvelComics);
+
+  
+  // 6. 
