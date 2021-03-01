@@ -176,7 +176,7 @@ const marvelComics = superheroes
   console.log("Alle superhelden van Marvel Comics: ", marvelComics);
 
   
-  // 6. Tel het gewicht van alle superhelden van DC Comics bij elkaar op.
+// 6. Tel het gewicht van alle superhelden van DC Comics bij elkaar op.
 
   const allDCComics = superheroes.filter((superhero) => {
     return superhero.publisher === "DC Comics"
@@ -215,7 +215,7 @@ const weightAddedOfAllDCComics = superheroes
 
 console.log(weightAddedOfAllDCComics);
 
-  // 7. Doe hetzelfde met alle superhelden van Marvel Comics
+// 7. Doe hetzelfde met alle superhelden van Marvel Comics
 
   const allMarvelComics = superheroes.filter((superhero) => {
     return superhero.publisher === "Marvel Comics";
@@ -255,5 +255,19 @@ console.log(weightAddedOfAllDCComics);
   console.log(weightAddedAllMarvelComics);
 
 
-  // 8. zoek de zwaarste superheld!
+// 8. zoek de zwaarste superheld!
+
+  // zet alle gewicht om in nummers
+  const superheroesWeightToNumber = superheroes.map((superhero) => {
+    if (superhero.weight !== "unknown") {
+      superhero.weight = parseInt(superhero.weight);
+    } else {
+      superhero.weight = 0
+    }
+    return superhero;
+  });
+
+  console.log("All heroes weight to numbers", superheroesWeightToNumber);
+
+  // zoek het hoogste gewicht
 
