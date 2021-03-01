@@ -163,7 +163,7 @@ const dcComics = superheroes.filter((superhero) => {
   return superhero.name;
 })
 
-console.log(dcComics);
+console.log("Alle superhelden van DC Comics: ", dcComics);
 
 const marvelComics = superheroes
   .filter((superhero) => {
@@ -173,7 +173,87 @@ const marvelComics = superheroes
     return superhero.name;
   });
 
-  console.log(marvelComics);
+  console.log("Alle superhelden van Marvel Comics: ", marvelComics);
 
   
-  // 6. 
+  // 6. Tel het gewicht van alle superhelden van DC Comics bij elkaar op.
+
+  const allDCComics = superheroes.filter((superhero) => {
+    return superhero.publisher === "DC Comics"
+  });
+
+  console.log(allDCComics);
+
+  const weightsOfDCComics = allDCComics.map((superhero) => {
+    if(superhero.weight !== "unknown") {
+      return parseInt(superhero.weight);
+    } else {
+      return 0;
+    }
+  });
+
+  console.log(weightsOfDCComics);
+
+  const addedWeightOfAllDCComics = weightsOfDCComics.reduce((acc, cValue) => {
+    return acc + cValue;
+  }, 0);
+
+  console.log(addedWeightOfAllDCComics);
+
+  // In verkorte versie met chaining
+
+const weightAddedOfAllDCComics = superheroes
+.filter((superhero) => superhero.publisher === "DC Comics")
+.map((superhero) => {
+  if (superhero.weight !== "unknown") {
+    return parseInt(superhero.weight);
+  } else {
+    return 0;
+  }
+})
+.reduce((acc, cValue) => acc + cValue, 0);  
+
+console.log(weightAddedOfAllDCComics);
+
+  // 7. Doe hetzelfde met alle superhelden van Marvel Comics
+
+  const allMarvelComics = superheroes.filter((superhero) => {
+    return superhero.publisher === "Marvel Comics";
+  });
+
+  console.log(allMarvelComics);
+
+  const weightsOfMarvelComics = allMarvelComics.map((superhero) => {
+    if (superhero.weight !== "unknown") {
+      return parseInt(superhero.weight);
+    } else {
+      return 0;
+    }
+  });
+
+  console.log(weightsOfMarvelComics);
+
+  const addedWeightOfAllMarvelComics = weightsOfMarvelComics.reduce((acc, cValue) => {
+    return acc + cValue;
+  }, 0);
+
+  console.log(addedWeightOfAllMarvelComics);
+
+  // In verkorte versie met chaining
+
+  const weightAddedAllMarvelComics = superheroes
+  .filter((superhero) => superhero.publisher === "Marvel Comics")
+  .map((superhero) => {
+    if (superhero.weight !== "unknown") {
+      return parseInt(superhero.weight);
+    } else {
+      return 0;
+    }
+  })
+  .reduce((acc, cValue) => acc + cValue, 0);
+
+  console.log(weightAddedAllMarvelComics);
+
+
+  // 8. zoek de zwaarste superheld!
+
