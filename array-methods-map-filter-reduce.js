@@ -271,3 +271,14 @@ console.log(weightAddedOfAllDCComics);
 
   // zoek het hoogste gewicht
 
+  const biggestWeightSuperhero = superheroesWeightToNumber.reduce((acc, cValue) => {
+    if (acc.weight > cValue.weight) {
+      return acc
+    } else {
+      return cValue;
+    }
+  });
+
+  console.log("Heaviest superhero is", biggestWeightSuperhero);
+
+  
